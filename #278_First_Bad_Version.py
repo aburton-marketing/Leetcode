@@ -1,3 +1,7 @@
+# You are a product manager and currently leading a team to develop a new product. 
+# Unfortunately, the latest version of your product fails the quality check. 
+# Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+# Implement a function to find the first bad version. You should minimize the number of calls to the API.
 
 def firstBadVersion(n):
     if n < 3:
@@ -5,7 +9,7 @@ def firstBadVersion(n):
             if isBadVersion(i) == True:
                 firstBadVersion = i
                 return firstBadVersion
-    # BS setup
+    # Binary Search setup
     high = n - 1
     low = 0
     while low <= high:
@@ -33,7 +37,6 @@ def firstBadVersion(n):
         else:
             print(mid - 1, mid, mid + 1)
             return False 
-
     return firstBadVersion          
 
 
